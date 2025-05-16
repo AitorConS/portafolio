@@ -1,0 +1,92 @@
+---
+const tabs = [
+  { id: 'proyectos', label: 'Proyectos' },
+  { id: 'experiencias', label: 'Experiencia' },
+];
+---
+
+<style>
+  .tab-btn {
+    transition: transform 0.2s ease, opacity 0.3s ease;
+  }
+
+  .tab-btn:hover {
+    opacity: 0.7;
+  }
+
+  .tab-btn.selected {
+    transform: scale(1.1);
+  }
+
+  /* Fade-in animation for content */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      scale: 0.98;
+    }
+    to {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+
+  .fade-in {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+</style>
+
+<div class="flex justify-center mb-8">
+  <div class="relative px-1 py-1 rounded-full backdrop-blur-md bg-white/5 shadow-xl">
+    <div class="relative z-10 flex space-x-2">
+      {tabs.map((tab, index) => (
+        <button
+          type="button"
+          class="tab-btn px-4 py-2 text-sm font-medium rounded-full transition-colors"
+          class:list={[index === 0 ? 'bg-white text-black' : 'text-gray-500 hover:text-dark']}
+          data-tab={tab.id}
+        >
+          {tab.label}
+        </button>
+      ))}
+    </div>
+  </div>
+</div>
+
+<div id="contenido-proyectos" class="tab-content fade-in">
+  <slot name="proyectos">Contenido de Proyectos</slot>
+</div>
+<div id="contenido-experiencias" class="tab-content hidden m-auto fade-in">
+  <slot name="experiencias">Contenido de Experiencias</slot>
+</div>
+
+<script is:inline>
+  const buttons = document.querySelectorAll(".tab-btn");
+  const contents = document.querySelectorAll(".tab-content");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const target = btn.getAttribute('data-tab');
+
+      buttons.forEach(b => {
+        b.classList.remove("bg-white", "text-black", "selected");
+        b.classList.add("text-gray-500");
+      });
+
+      btn.classList.add("bg-white", "text-black", "selected");
+      btn.classList.remove("text-gray-500");
+
+      contents.forEach(c => {
+        c.classList.add("hidden");
+        c.classList.remove("fade-in");
+      });
+
+      const contentElement = document.getElementById(`contenido-${target}`);
+      if (contentElement) {
+        contentElement.classList.remove("hidden");
+        // Trigger reflow to restart animation
+        void contentElement.offsetWidth;
+        contentElement.classList.add("fade-in");
+      }
+    });
+  });
+</script>

@@ -1,2 +1,9 @@
 @import "tailwindcss";
 
+@font-face {
+    font-family: "Gabarito", sans-serif;
+    src: url('/fonts/Gabarito-Regular.ttf') format('ttf');
+    font-optical-sizing: auto;
+    font-weight: regular;
+    font-style: normal;
+  }

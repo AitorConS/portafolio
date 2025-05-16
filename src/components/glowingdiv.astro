@@ -1,0 +1,79 @@
+---
+const {title, position ,description, image} = Astro.props;
+---
+
+<div class="card example-1 relative rounded-xl">
+    <div class="inner rounded-xl">
+        <div class="flex items-center space-x-4">
+            <a href="https://www.linxea.com/" target="_blank" rel="noopener noreferrer" class="w-fit max-w-32 h-10 sm:h-14 rounded-md p-1.5 sm:p-3 bg-white flex items-center justify-center transition-colors duration-500">
+            <img src="images/claranet.png" alt="Linxea" class="w-full h-full object-contain"></a>            
+            <div>
+            <div class="text-lg font-bold text-text-light tracking-wide dark:text-gray-200 transition-colors">Linxea</div>
+            <div class="text-base text-text-light_secondary dark:text-gray-400">Desarrollador Frontend</div></div>
+        </div>
+        <p class="mt-5">
+          {description}
+        </p>
+    </div>
+  </div>
+
+  <style>
+    .card {
+        max-width: 400px;
+        width: 100%;
+        margin: auto;
+      }
+      
+      .card .inner {
+        padding: 25px;
+        background: #222;
+        color: #fff;
+      }
+      
+      .card h3 {
+        margin-bottom: 15px;
+      }
+      
+      .example-1 {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .example-1 .inner{
+        position: relative;
+        z-index: 1;
+        width: 100%;
+      }
+      
+      .example-1 .inner {
+        margin: 5px;
+      }
+      
+      .example-1::before {
+        content: "";
+        display: block;
+        background: linear-gradient(
+          90deg,
+          hsla(197, 100%, 64%, 1) 0%,
+          hsla(339, 100%, 55%, 1) 100%
+        );
+        height: 500px;
+        width: 500px;
+        position: absolute;
+        animation: rotate 8s linear infinite;
+        z-index: 0;
+      }
+      
+      @keyframes rotate {
+        from {
+          transform: rotate(0);
+        }
+      
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>

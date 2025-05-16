@@ -1,5 +1,19 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+  "extends": "astro/tsconfigs/strict", // Extiende el conjunto de configuraciones estrictas de Astro
+  "include": [
+    ".astro/types.d.ts", // Asegura que los tipos de Astro se incluyan
+    "**/*" // Incluye todos los archivos en tu proyecto
+  ],
+  "exclude": ["dist"], // Excluye la carpeta 'dist' del proceso de compilación
+  "compilerOptions": {
+    "plugins": [
+      {
+        "name": "@astrojs/ts-plugin" // Usa el plugin de TypeScript para Astro
+      }
+    ],
+    "strict": true, // Habilita todas las reglas estrictas de TypeScript
+    "esModuleInterop": true, // Permite la interoperabilidad con módulos CommonJS y ESModules
+    "skipLibCheck": true, // Omite la verificación de tipos en las bibliotecas
+    "forceConsistentCasingInFileNames": true // Asegura el uso consistente de mayúsculas y minúsculas en los nombres de los archivos
+  }
 }

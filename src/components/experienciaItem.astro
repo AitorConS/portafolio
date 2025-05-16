@@ -1,0 +1,22 @@
+---
+export interface Props {
+    date: string;
+    company: string;
+    position: string;
+    description: string;
+}
+const { date, company, position, description } = Astro.props;
+import Glowingdiv from './glowingdiv.astro';
+---
+
+<li class="relative mb-10 sm:ms-6 flex items-center">
+    <div class="absolute lg:-left-45 text-right w-32 text-white text-xl">
+    {date}
+    </div>
+    <div class="relative flex-1 sm:ps-3  ">
+          <div class="lg:invisible visible text-white text-2sm text-center mb-2 w-full"> {date}</div>
+          <div class="sm:ms-2 transition-transform duration-300 opacity-80 hover:-translate-y-2 hover:opacity-100">
+            <Glowingdiv title={position} description={description} image="/images/claranet.png" />
+          </div>
+    </div>
+</li>

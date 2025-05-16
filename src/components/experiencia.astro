@@ -1,0 +1,33 @@
+---
+const Experience = [
+    {
+        date: "2018 - 2020",
+        company: "Astro",
+        position: "Software Developer",
+        description: "Desarrollo de aplicaciones web y móviles con Astro Framework."
+    },
+    {
+        date: "2020 - 2022",
+        company: "Astro",
+        position: "Software Developer",
+        description: "Desarrollo de aplicaciones web y móviles con Astro Framework."
+    },
+    {
+        date: "2022 - 2023",
+        company: "Astro",
+        position: "Software Developer",
+        description: "Desarrollo de aplicaciones web y móviles con Astro Framework."
+    }
+]
+import ExperienciaItem from "./experienciaItem.astro"
+---
+
+  
+    <ol class="relative lg:border-s  lg:dark:border-gray-700  ">  
+        {          
+            Experience.map(experience => (
+                <ExperienciaItem {...experience}/>
+            ))
+        }
+    </ol>
+
