@@ -1,15 +1,15 @@
 ---
-const {title, position ,description, image} = Astro.props;
+const {title ,company, position ,description, image, url} = Astro.props;
 ---
 
 <div class="card example-1 relative rounded-xl">
     <div class="inner rounded-xl">
         <div class="flex items-center space-x-4">
-            <a href="https://www.linxea.com/" target="_blank" rel="noopener noreferrer" class="w-fit max-w-32 h-10 sm:h-14 rounded-md p-1.5 sm:p-3 bg-white flex items-center justify-center transition-colors duration-500">
-            <img src="images/claranet.png" alt="Linxea" class="w-full h-full object-contain"></a>            
+            <a href={url} target="_blank" rel="noopener noreferrer" class="w-fit h-fit max-w-30 sm:h-14 rounded-md p-1.5 sm:p-3 bg-white flex items-center justify-center transition-colors duration-500">
+            <img src={image} alt={company} class="w-full h-full object-contain hover:scale-120 transition-discrete duration-300"></a>            
             <div>
-            <div class="text-lg font-bold text-text-light tracking-wide dark:text-gray-200 transition-colors">Linxea</div>
-            <div class="text-base text-text-light_secondary dark:text-gray-400">Desarrollador Frontend</div></div>
+            <div class="text-lg font-bold text-text-light tracking-wide dark:text-gray-200 transition-colors">{company}</div>
+            <div class="text-base text-text-light_secondary dark:text-gray-400">{title}</div></div>
         </div>
         <p class="mt-5">
           {description}
