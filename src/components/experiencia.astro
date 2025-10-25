@@ -1,31 +1,36 @@
 ---
 const Experience = [
     {
+        date: "Septiembre 2025 -  Actualmente",
+        company: "ID Finance",
+        position: "SysAdmin",
+        description:
+            "Pasantia en una StartUp lider en españa en el sector bancario. Administracion de sistemas y redes",
+        img: "/images/id_finance_logo.webp",
+        url: "https://idfinance.com/",
+    },
+    {
         date: "Marzo 2025 - Junio 2025",
         company: "Perugia Software Engineering",
         position: "Software Developer",
-        description: "Prácticas Erasmus+ en una empresa italiana centrada en el desarrollo de software.",
+        description:
+            "Prácticas Erasmus+ en una empresa italiana centrada en el desarrollo de software.",
         img: "/images/softwareenginering.webp",
-        url: "https://www.softwarengineering.it/"
+        url: "https://www.softwarengineering.it/",
     },
     {
         date: "Junio 2022 - Enero 2023",
         company: "informáticoOnline",
         position: "Técnico informático",
-        description: "Estancia de practicas en una empresa centrada en mantenimiento y soporte de equipos informáticos.",
+        description:
+            "Estancia de practicas en una empresa centrada en mantenimiento y soporte de equipos informáticos.",
         img: "/images/informaticoonline.webp",
-        url: "https://www.informaticoonline.com/"
-    }
-]
-import ExperienciaItem from "./experienciaItem.astro"
+        url: "https://www.informaticoonline.com/",
+    },
+];
+import ExperienciaItem from "./experienciaItem.astro";
 ---
 
-  
-    <ol class="relative lg:border-s  lg:dark:border-gray-700  ">  
-        {          
-            Experience.map(experience => (
-                <ExperienciaItem {...experience}/>
-            ))
-        }
-    </ol>
-
+<ol class="relative lg:border-s lg:dark:border-gray-700">
+    {Experience.map((experience) => <ExperienciaItem {...experience} />)}
+</ol>
