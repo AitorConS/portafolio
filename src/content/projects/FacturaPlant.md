@@ -1,8 +1,8 @@
 ---
-title: FacturaPlant
+title: HedgeLabs
 author: Aitor Conesa
-img: /images/facturaplant.PNG
-description: Aplicacion Web enfocada al sector agricola. Generacion automatica de los pasaportes fitosanitarios y facturas. Gestion de clientes, productos y facturas. Desarrollada con Astro y MySQL 
-link: https://facturaplant.aitorconesa.es
-github: https://github.com/AitorConS/FacturaPlant-Docs
+img: /images/hedgelabs.PNG
+description: Tienda Online para producto de electronica llamado Nexus, un robot que usa sistema PID para equilibrar una bola constantmente
+link: https://hedgelabs.store
+github: https://github.com/AitorConS/HedgeLabs
 ---
